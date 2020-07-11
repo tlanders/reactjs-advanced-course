@@ -1,5 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Code from [Advanced ReactJS LiveLessons](https://learning.oreilly.com/videos/advanced-react-js-livelessons/9780134676920) on O'Reilly site.
 ## Available Scripts
 
 In the project directory, you can run:
