@@ -1,22 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route} from 'react-router-dom';
 import './index.css';
-import Home from './pages/Home';
-import About from './pages/About';
 import App from './pages/App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render((
     <React.StrictMode>
-        <BrowserRouter>
-            <Route path='/'>
-                <App>
-                    <Route path='/home' component={Home}/>
-                    <Route path='/about' component={About}/>
-                </App>
-            </Route>
-        </BrowserRouter>
+        <App/>
+        {/*<BrowserRouter>*/}
+        {/*    <Route path='/'>*/}
+        {/*        <App>*/}
+        {/*            <Route path='/home' component={Home}/>*/}
+        {/*            <Route path='/about' component={About}/>*/}
+        {/*        </App>*/}
+        {/*    </Route>*/}
+        {/*</BrowserRouter>*/}
     </React.StrictMode>),
   document.getElementById('root')
 );

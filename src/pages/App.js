@@ -1,5 +1,8 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {BrowserRouter, Link, Route} from "react-router-dom";
+import {Switch} from 'react-router';
+import Home from "./Home";
+import About from "./About";
 
 class App extends React.Component {
     constructor(props) {
@@ -9,14 +12,21 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <header>
-                    <h1>App default page</h1>
-                    <nav>
-                        <Link to={'/home'}>Home</Link>
-                        <Link to={'/about'}>About</Link>
-                    </nav>
-                </header>
-                {this.props.children}
+                <BrowserRouter>
+                    <header>
+                        <h1>App default page</h1>
+                        <nav>
+                            <Link to={'/home'}>Home</Link> <Link to={'/about'}>About</Link>
+                        </nav>
+                    </header>
+
+                    <Switch>
+                        <Route path='/' exact component={Home}/>
+                        <Route path='/home' component={Home}/>
+                        <Route path='/about' component={About}/>
+                    </Switch>
+                </BrowserRouter>
+
                 <footer>
                     <p>The Footer</p>
                 </footer>
