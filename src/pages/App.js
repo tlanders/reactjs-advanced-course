@@ -9,9 +9,17 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <p>App default page</p>
-                <Link to={'/home'}>Home</Link>
-                <Link to={'/about'}>About</Link>
+                <header>
+                    <h1>App default page</h1>
+                    <nav>
+                        <Link to={'/home'}>Home</Link>
+                        <Link to={'/about'}>About</Link>
+                    </nav>
+                </header>
+                {this.props.children}
+                <footer>
+                    <p>The Footer</p>
+                </footer>
             </div>
         )
     }

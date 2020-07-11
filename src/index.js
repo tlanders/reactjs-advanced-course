@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import './index.css';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -9,11 +9,14 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render((
     <React.StrictMode>
-        <HashRouter>
-            <Route path='/' component={App}/>
-            <Route path='/home' component={Home}/>
-            <Route path='/about' component={About}/>
-        </HashRouter>
+        <BrowserRouter>
+            <Route path='/'>
+                <App>
+                    <Route path='/home' component={Home}/>
+                    <Route path='/about' component={About}/>
+                </App>
+            </Route>
+        </BrowserRouter>
     </React.StrictMode>),
   document.getElementById('root')
 );
