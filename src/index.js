@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {HashRouter, Route} from 'react-router-dom';
 import './index.css';
-import App from './App';
+import Home from './pages/Home';
+import About from './pages/About';
+import App from './pages/App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ReactDOM.render((
+    <React.StrictMode>
+        <HashRouter>
+            <Route path='/' component={App}/>
+            <Route path='/home' component={Home}/>
+            <Route path='/about' component={About}/>
+        </HashRouter>
+    </React.StrictMode>),
   document.getElementById('root')
 );
 
