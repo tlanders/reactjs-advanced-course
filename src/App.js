@@ -29,6 +29,21 @@ class About extends React.Component {
   }
 }
 
+class Nav extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div>
+                <button onClick={this.props.goToAbout}>Go to About</button>
+                <button onClick={this.props.goToHome}>Go to Home</button>
+            </div>
+        );
+    }
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -55,8 +70,7 @@ class App extends React.Component {
     return (
         <div className="App">
             {this.state.view}
-            <button onClick={this.goToAbout}>Go to About</button>
-            <button onClick={this.goToHome}>Go to Home</button>
+            <Nav goToAbout={this.goToAbout} goToHome={this.goToHome}/>
         </div>
     );
   }
