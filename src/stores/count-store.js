@@ -32,7 +32,7 @@ dispatcher.register(action => {
     // console.log('inside cb: ' + action);
     switch(action.actionType) {
     case constants.INCREMENT:
-        console.log('inside switch cb: ' + action);
+        // console.log('inside switch cb: ' + action);
         incrementCount();
         TodoStore.emitChange();
         break;
