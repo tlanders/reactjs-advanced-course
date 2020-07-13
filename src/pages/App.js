@@ -18,6 +18,7 @@ class App extends React.Component {
                         <nav>
                             <Link to={'/home'}>Home</Link> <Link to={'/about'}>About</Link>
                         </nav>
+                        <hr/>
                     </header>
 
                     <Switch>
@@ -28,7 +29,8 @@ class App extends React.Component {
                 </BrowserRouter>
 
                 <footer>
-                    <p>The Footer</p>
+                    <hr/>
+                    <p>This is the footer</p>
                 </footer>
             </div>
         )
