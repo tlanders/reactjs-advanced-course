@@ -3,7 +3,7 @@ import dispatcher from "../dispatcher/dispatcher";
 
 export let incrementActions = {
     incrementCount: () => {
-        console.log('INCREMENT action dispatched');
+        // console.log('INCREMENT action dispatched');
         dispatcher.dispatch({
             actionType: constants.INCREMENT
         })

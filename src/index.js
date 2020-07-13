@@ -4,20 +4,34 @@ import './index.css';
 // import App from './pages/App';
 import * as serviceWorker from './serviceWorker';
 import {incrementActions} from "./actions/app-actions";
-
-// import {} from './actions/app-actions.js';
+import TodoStore from "./stores/count-store";
 
 class FluxApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            count: 0
+            count: TodoStore.getCount()
         };
         this.increment = this.increment.bind(this);
+        this._onChange = this._onChange.bind(this);
     }
 
     increment() {
         incrementActions.incrementCount();
+    }
+
+    componentDidMount() {
+        TodoStore.addChangeListener(this._onChange);
+    }
+
+    componentWillUnmount() {
+        TodoStore.removeChangeListener(this._onChange);
+    }
+
+    _onChange() {
+        this.setState({
+            count: TodoStore.getCount()
+        });
     }
 
     render() {
