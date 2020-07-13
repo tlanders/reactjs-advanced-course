@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './pages/App';
 import * as serviceWorker from './serviceWorker';
+import {incrementActions} from "./actions/app-actions";
 
 // import {} from './actions/app-actions.js';
 
@@ -16,9 +17,7 @@ class FluxApp extends React.Component {
     }
 
     increment() {
-        this.setState({
-            count: this.state.count + 1
-        });
+        incrementActions.incrementCount();
     }
 
     render() {
