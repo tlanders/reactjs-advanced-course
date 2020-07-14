@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './pages/App';
 import * as serviceWorker from './serviceWorker';
-import FluxApp from "./components/FluxApp";
+import ReduxApp from "./components/ReduxApp";
 
 ReactDOM.render((
     <React.StrictMode>
-        <FluxApp/>
+        <ReduxApp/>
     </React.StrictMode>),
   document.getElementById('root')
 );
