@@ -5,18 +5,27 @@ class ReduxApp extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { count: 0 };
+        this.state = {
+            count: props.store.getState()
+        };
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.store.subscribe(this.handleChange);
+    }
+
+    handleChange() {
+        this.setState({
+            count: this.props.store.getState()
+        });
     }
 
     handleClick() {
         console.log('handleClick calling incrementCount');
-        incrementCount();
-        // this.setState({
-        //     count: this.state.count + 1
-        // });
-        // TODO - dispatch to store
+        this.props.store.dispatch(incrementCount());
     }
 
     render() {

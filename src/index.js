@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './pages/App';
 import * as serviceWorker from './serviceWorker';
+import {createStore} from "redux";
+import reducer from './reducers';
 import ReduxApp from "./components/ReduxApp";
+
+let store = createStore(reducer);
 
 ReactDOM.render((
     <React.StrictMode>
-        <ReduxApp/>
+        <ReduxApp store={store}/>
     </React.StrictMode>),
   document.getElementById('root')
 );
